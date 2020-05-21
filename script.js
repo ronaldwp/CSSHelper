@@ -22,26 +22,40 @@ colorPicker.on('color:change', function(color){
 
 // gradiant generator
 // iro.js
-const colorPickerTwo = new iro.ColorPicker('#pickerTwo', {
-	// size
-	width: 250,
-	// colors
-	colors: [
-		"#f44336",
-		"#9c27b0",
+var gradiantPicker = new iro.ColorPicker("#gradiantPicker", {
+  width: 200,
+  colors: [
+  	"rgb(0, 255, 0)",
+  	"rgb(255, 0, 0)",
 	],
-	//border-width
-	borderWidth: 3,
-	// border-color
-	borderColor: "#fff"
+  borderWidth: 2,
+  borderColor: "#fff",
+  layout: [
+    {
+      component: iro.ui.Box,
+    },
+    {
+      component: iro.ui.Slider,
+      options: {
+        sliderType: 'hue'
+      }
+    }
+  ]
 });
 
 // gradiant name
+const gradBkg = document.querySelector(".gradiant");
+const range = document.querySelector("#range");
+const gradName = document.querySelector(".gradientName");
 
+	// listener
+gradiantPicker.on('color:change', colorUpdateGrad);
+range.addEventListener("input", colorUpdateGrad);
 
-
-// console.log(colorPickerTwo.colors[0].hexString);
-// console.log(colorPickerTwo.colors[1].hexString);
-
+	// function
+function colorUpdateGrad() {
+	gradBkg.style.background = `linear-gradient(${range.value}deg, ${gradiantPicker.colors[0].hexString}, ${gradiantPicker.colors[1].hexString})`;
+	gradName.innerHTML = `background: linear-gradient(${range.value}deg, ${gradiantPicker.colors[0].hexString}, ${gradiantPicker.colors[1].hexString})`;
+}
 
 
