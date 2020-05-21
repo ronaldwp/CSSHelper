@@ -8,8 +8,10 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 <!-- font -->
 	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet"> 
-
 <!-- font awesome -->
+
+<!-- color picker iro.js cdn -->
+	<script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
 
 </head>
 <body>
@@ -19,7 +21,7 @@
 			<li class="logo">
 				<a href="#">CSSHelper</a>
 			</li>
-			<li><a href="#">Color Palette</a></li>
+			<li><a href="#">Color Picker</a></li>
 			<li><a href="#">Gradiant Generator</a></li>
 			<li><a href="#">Box Shadow</a></li>
 			<li class="bm"><a href="#">BM</a></li>
@@ -27,15 +29,29 @@
 	</nav>
 
 <!-- section to pick what the action will be-->
-	<section class="landing-sect">
-		<div class="landing-div color">
-			<h1>Color</h1>
+	<!-- color picker -->
+	<section class="color">
+		<h1>Color Picker</h1>
+		<div class="container">
+			<div id="picker"></div>
+			<div id="box">
+				<div id="colorBox"></div>
+				<h1 id="colorName">#80cbc4</h1>
+			</div>
 		</div>
-		<div class="landing-div grad">
-			<h1>Gradiant</h1>
-		</div>
-		<div class="landing-div boxSha">
-			<h1>Box Shadow</h1>
+	</section>
+
+	<!-- gradiant generator -->
+	<section class="gradiant">
+		<h1>Gradiant Generator</h1>
+		<div class="container">
+			<div id="pickerTwo"></div>
+			<div id="boxTwo">
+				<input type="range" min="0" max="360" id="slider">
+				<h1 id="gradiantName">
+				background: linear-gradient(#f44336, #9c27b0);
+				</h1>
+			</div>
 		</div>
 	</section>
 
