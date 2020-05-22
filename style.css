@@ -122,6 +122,37 @@ h1 {
 	margin-top: .5rem;
 }
 
+/*box shadow*/
+.box {
+	width: 300px;
+	height: 150px;
+	background: #9aa9cb;
+	margin-bottom: 3rem;
+	box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.2);
+}
+
+.miniContainer {
+	display: flex;
+	flex-flow: column;
+}
+
+label {
+	margin-bottom: 10px;
+}
+
+.slider {
+	margin-bottom: 1rem;
+}
+
+#boxShadowText {
+	color: #000;
+	padding: 0 10px;
+}
+
+#colorSlider {
+	padding: 0;
+	border: 0;
+}
 
 /*footer*/
 footer {

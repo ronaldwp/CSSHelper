@@ -21,16 +21,16 @@
 			<li class="logo">
 				<a href="#">CSSHelper</a>
 			</li>
-			<li><a href="#">Color Picker</a></li>
-			<li><a href="#">Gradiant Generator</a></li>
-			<li><a href="#">Box Shadow</a></li>
+			<li><a href="#colorPicker">Color Picker</a></li>
+			<li><a href="#gradientGenerator">Gradiant Generator</a></li>
+			<li><a href="#boxShadow">Box Shadow</a></li>
 			<li class="bm"><a href="#">BM</a></li>
 		</ul>
 	</nav>
 
 <!-- section to pick what the action will be-->
 	<!-- color picker -->
-	<section class="color">
+	<section class="color" id="colorPicker">
 		<h1>Color Picker</h1>
 		<div class="container">
 			<div id="picker"></div>
@@ -42,13 +42,38 @@
 	</section>
 
 	<!-- gradiant generator -->
-	<section class="gradiant">
+	<section class="gradiant" id="gradientGenerator">
 		<h1>Gradiant Generator</h1>
 		<div class="container-grad">
 			<div id="gradiantPicker"></div>
 			<input type="range" id="range" min="0" max="360">
 			<div class="textBox">
 				<h1 class="gradientName">background: linear-gradiant(60deg, #ebebeb, "#1f1f1f");</h1>
+			</div>
+		</div>
+	</section>
+
+	<!-- box shadow -->
+	<section class="shadow" id="boxShadow">
+		<h1>Box Shadow</h1>
+		<div class="container-grad">
+			<div class="box"></div>
+			<div class="miniContainer">
+				<label>Offset-x</label>
+				<input type="range" min="-200", max="200" id="offsetX" class="slider">
+				<label>Offset-y</label>
+				<input type="range" min="-200", max="200" id="offsetY" class="slider">
+				<label>Blur-radius</label>
+				<input type="range" min="0", max="300" id="blur" class="slider">
+				<label>Spread-radius</label>
+				<input type="range" min="-200", max="200" id="spread" class="slider">
+				<label>Opacity</label>
+				<input type="range" min="0", max="10" id="opacity" class="slider">
+				<label>Color</label>
+				<input type="color" id="colorSlider" class="slider">
+				<div class="textBox">
+				<h1 id="boxShadowText">box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);</h1>
+			</div>
 			</div>
 		</div>
 	</section>
