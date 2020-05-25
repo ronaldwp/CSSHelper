@@ -5,6 +5,8 @@
 /*nav*/
 nav {
 	background-color: #ebebeb;
+	position: sticky;
+	top: 0;
 }
 
 nav > ul {
@@ -134,17 +136,23 @@ h1 {
 .miniContainer {
 	display: flex;
 	flex-flow: column;
+	align-items: center;
 }
 
 label {
 	margin-bottom: 10px;
+	align-self: flex-start;
+	padding-left: 3rem; 
 }
 
 .slider {
+	width: 300px;
 	margin-bottom: 1rem;
 }
 
 #boxShadowText {
+	text-align: center;
+	width: 450px;
 	color: #000;
 	padding: 0 10px;
 }

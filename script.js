@@ -58,4 +58,37 @@ function colorUpdateGrad() {
 	gradName.innerHTML = `background: linear-gradient(${range.value}deg, ${gradiantPicker.colors[0].hexString}, ${gradiantPicker.colors[1].hexString})`;
 }
 
+// box shadow
+const box = document.querySelector(".box");
+const offsetX = document.querySelector("#offsetX");
+const offsetY = document.querySelector("#offsetY");
+const blur = document.querySelector("#blur");
+const spread = document.querySelector("#spread");
+const opacity = document.querySelector("#opacity");
+const color = document.querySelector("#colorSlider");
+const boxShadowText = document.querySelector("#boxShadowText");
+let rgb;
+const array = [offsetX, offsetY, blur, spread, opacity, color];
 
+
+array.forEach(e => {
+	e.addEventListener("input", updateBox);
+})
+
+ // hex to rgb
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+
+function updateBox() {
+	rgb = hexToRgb(color.value);
+	let textValue = `${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${opacity.value/10})`;
+	box.style.boxShadow = textValue;
+	// box.style.boxShadow = `${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${opacity.value/10})`;
+	boxShadowText.innerHTML = "box-shadow: " + textValue;
+}
