@@ -19,6 +19,10 @@ colorPicker.on('color:change', function(color){
 	colorBox.style.backgroundColor = color.hexString;
 });
 
+// Color Theories
+const boxOne = document.querySelector(".boxOne");
+const boxTwo = document.querySelector(".boxTwo");
+const select = document.querySelector("select");
 
 // gradiant generator
 // iro.js
@@ -69,7 +73,6 @@ const color = document.querySelector("#colorSlider");
 const boxShadowText = document.querySelector("#boxShadowText");
 let rgb;
 const array = [offsetX, offsetY, blur, spread, opacity, color];
-
 
 array.forEach(e => {
 	e.addEventListener("input", updateBox);
