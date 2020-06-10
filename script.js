@@ -6,23 +6,25 @@ const colorPicker = new iro.ColorPicker('#picker', {
 	// UI coponent stacking direction
 	layoutDirection: "vertical",
 	// initial colors
-	color: "#80cbc4",
+	colors: [
+    '#25f54e', 
+    '#2930ff', 
+    '#f21f2a', 
+  ]
 });
 
 // color name
-colorPicker.on('color:change', function(color){
-	// color code change on h1 tag
-	const colorName =  document.querySelector("#colorName");
-	colorName.innerHTML = color.hexString;
-	// color change on #colorBox
-	const colorBox = document.querySelector("#colorBox");
-	colorBox.style.backgroundColor = color.hexString;
-});
+const boxes = [...document.querySelectorAll("#colorBox")];
+const names = [...document.querySelectorAll('#colorName')];
 
-// Color Theories
-const boxOne = document.querySelector(".boxOne");
-const boxTwo = document.querySelector(".boxTwo");
-const select = document.querySelector("select");
+colorPicker.on('color:change', colorUpdatePick);
+
+function colorUpdatePick() {
+	// update color on the boxes
+	boxes.forEach((e, i) => e.style.background = `${this.colors[i].hexString}`);
+	// upate name
+	names.forEach((e, i) => e.innerText = this.colors[i].hexString);
+}
 
 // gradiant generator
 // iro.js

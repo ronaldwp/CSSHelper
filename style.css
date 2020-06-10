@@ -23,15 +23,19 @@ nav > ul > li {
 
 a {
 	text-decoration: none;
-	color:#000;
+	color:#8f9691;
 }
 
 a:hover {
-	color:#fff;
+	color:#000;
 }
 
 .logo {
 	font-size: 1.5rem;
+}
+
+.logo > a {
+	color: #000;
 }
 
 .bm {
@@ -62,21 +66,13 @@ h1 {
 }
 
 #box {
+	margin-top: 1em;
 	width: 80%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-column-gap: 1rem;
 }
 
-select {
-	width: 30%;
-	margin: 1.5rem auto 1rem auto;
-	grid-column: span 3;
-	font-family: 'Jost', sans-serif;
-	border: none;
-	box-shadow: inset 8px 8px 8px -10px rgba(0,0,0,0.32);
-	font-size: 1rem;
-}
 
 #colorBox {
 	width: 100%;
@@ -86,6 +82,7 @@ select {
 }
 
 #colorName {
+	text-transform: uppercase;
 	margin: 1rem;
 	padding: .5rem 0;
 	text-align: center;
@@ -171,7 +168,7 @@ label {
 /*footer*/
 footer {
 	background-color: #ebebeb;
-	color: #ababab;
+	color: #8f9691;
 	padding: 2rem;
 	text-align: center;
 }
