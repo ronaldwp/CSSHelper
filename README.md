@@ -12,5 +12,6 @@ V1.1 (62020)
 Future plan
 1. Inset option for box shadow.
 2. Some form of cheat sheet for css grid and flex-box.
+3. custom handles for color picker.
 
 
